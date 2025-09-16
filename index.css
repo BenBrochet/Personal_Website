@@ -1,32 +1,50 @@
-body {
-    background-color: black;
+:root { color-scheme: dark; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #000; /* fallback if canvas fails */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  color: #d1ffd1;
+}
+
+/* Fullscreen background canvas */
+#matrix {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;              /* behind content */
+  pointer-events: none;    /* never blocks clicks */
+  display: block;
+}
+
+/* Foreground content (above canvas) */
+.content {
+  position: relative;
+  z-index: 1;              /* ensure above canvas */
+  min-height: 100dvh;
+  padding: 2rem clamp(1rem, 3vw, 3rem);
+}
+
+/* Optional readability gradient */
+.content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.45), transparent 30%);
+  z-index: -1;
 }
 
 #title {
-    color: hsl(141, 100%, 42%);
-    font-weight: lighter;
-    font-size: 40px;
-    text-align: center;
+  color: hsl(141, 100%, 42%);
+  font-weight: lighter;
+  font-size: 40px;
+  text-align: center;
 }
 
-body {
-    background-color: black;
-}
+.Sneakylink a { color: hsl(141, 100%, 55%); }
+.Sneakylink a:hover { text-decoration: underline; }
 
+.ME { color: hsl(141, 100%, 42%); }
 
-#title {
-    color: hsl(141, 100%, 42%);
-    font-weight: lighter;
-    font-size: 40px;
-    text-align: center;
-}
-
-.linky {
-    color: hsl(141, 100%, 42%);
-
-}
-
-.ME {
-
-    color: hsl(141, 100%, 42%);
-}
