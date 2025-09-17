@@ -1,82 +1,44 @@
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
 
-// Settings
-const chars = "01";
-let fontSize = 16;
-let drops = [];
-let columns = 0;
+// Resize canvas
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
 
-// Respect reduced motion
-const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Characters
+const letters = "01";
+const fontSize = 16;
+const columns = canvas.width / fontSize;
 
-// Fit canvas to screen with device-pixel-ratio scaling
-function fitCanvas() {
-  const dpr = Math.max(window.devicePixelRatio || 1, 1);
-
-  // CSS size (logical pixels)
-  const cssWidth = canvas.clientWidth;
-  const cssHeight = canvas.clientHeight;
-
-  // Actual canvas backing store (device pixels)
-  canvas.width = Math.floor(cssWidth * dpr);
-  canvas.height = Math.floor(cssHeight * dpr);
-
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0); // scale drawing ops back to CSS pixels
-  ctx.font = `${fontSize}px monospace`;
-
-  columns = Math.floor(cssWidth / fontSize);
-  drops = Array(columns).fill(1);
+// Drops
+const drops = [];
+for (let x = 0; x < columns; x++) {
+  drops[x] = 1;
 }
 
 function draw() {
-  // Trail fade
-  ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
-  ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+  // Fade background
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Green glyphs
-  ctx.fillStyle = "#0f0";
-  ctx.textBaseline = "top";
-  ctx.font = `${fontSize}px monospace`;
+  ctx.fillStyle = "#0F0"; // green
+  ctx.font = fontSize + "px monospace";
 
   for (let i = 0; i < drops.length; i++) {
-    const text = chars.charAt(Math.floor(Math.random() * chars.length));
-    const x = i * fontSize;
-    const y = drops[i] * fontSize;
+    const text = letters.charAt(Math.floor(Math.random() * letters.length));
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-    ctx.fillText(text, x, y);
-
-    // Reset randomly after passing the bottom
-    if (y > canvas.clientHeight && Math.random() > 0.975) drops[i] = 0;
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+      drops[i] = 0;
+    }
     drops[i]++;
   }
 }
 
-// Init
-fitCanvas();
-let timer = null;
+setInterval(draw, 33);
 
-if (!prefersReduced) {
-  timer = setInterval(draw, 33); // ~30fps
-} else {
-  // Static background for reduced motion
-  ctx.fillStyle = "#000";
-  ctx.fillRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-  ctx.fillStyle = "#0f0";
-  ctx.font = `${fontSize}px monospace`;
-  for (let i = 0; i < 400; i++) {
-    const x = Math.floor(Math.random() * canvas.clientWidth / fontSize) * fontSize;
-    const y = Math.floor(Math.random() * canvas.clientHeight / fontSize) * fontSize;
-    ctx.fillText(chars.charAt(Math.floor(Math.random() * chars.length)), x, y);
-  }
-}
-
-// Handle resizes (and DPR changes)
-let resizeRaf;
+// Handle resize
 window.addEventListener("resize", () => {
-  cancelAnimationFrame(resizeRaf);
-  resizeRaf = requestAnimationFrame(() => {
-    fitCanvas();
-  });
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
 });
-
