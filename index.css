@@ -9,8 +9,8 @@ html, body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
   color: #d1ffd1;
 }
-
-/* Fullscreen background canvas */
+/* Fullscreen background canvas * /
+/* Fullscreen background canvas * /
 .matrix {
   position: fixed;
   inset: 0;
