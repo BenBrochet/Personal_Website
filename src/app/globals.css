@@ -1,5 +1,5 @@
-:root { 
-  color-scheme: dark; 
+:root {
+  color-scheme: dark;
 }
 
 html, body {
@@ -9,8 +9,8 @@ html, body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
   color: #d1ffd1;
 }
-/* Fullscreen background canvas * /
-/* Fullscreen background canvas * /
+
+/* Fullscreen background canvas */
 .matrix {
   position: fixed;
   inset: 0;
@@ -45,14 +45,14 @@ html, body {
   text-align: center;
 }
 
-.Sneakylink a { 
-  color: hsl(141, 100%, 55%); 
+.Sneakylink a {
+  color: hsl(141, 100%, 55%);
   text-decoration: none;
 }
-.Sneakylink a:hover { 
-  text-decoration: underline; 
+.Sneakylink a:hover {
+  text-decoration: underline;
 }
 
-.ME { 
-  color: hsl(141, 100%, 42%); 
+.ME {
+  color: hsl(141, 100%, 42%);
 }
