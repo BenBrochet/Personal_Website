@@ -14,7 +14,7 @@ export default function Home() {
             </a>
           </li>
           <li className="nav-link">
-            <a href="https://github.com/BenBrochet" target="_blank" rel="noopener">
+            <a href="https://github.com/BenBrochet" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
           </li>
