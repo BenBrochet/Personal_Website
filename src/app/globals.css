@@ -5,7 +5,7 @@
 html, body {
   height: 100%;
   margin: 0;
-  background: #000; /* fallback if canvas fails */
+  background: #000;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
   color: #d1ffd1;
 }
@@ -16,43 +16,78 @@ html, body {
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;              /* behind content */
-  pointer-events: none;    /* never blocks clicks */
+  z-index: 0;
+  pointer-events: none;
   display: block;
 }
 
-/* Foreground content (above canvas) */
+/* Centered foreground content */
 .content {
   position: relative;
-  z-index: 1;              /* ensure above canvas */
+  z-index: 1;
   min-height: 100dvh;
-  padding: 2rem clamp(1rem, 3vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Optional readability gradient */
-.content::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.45), transparent 30%);
-  z-index: -1;
+.card {
+  text-align: center;
+  padding: 2.5rem 3rem;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(0, 255, 70, 0.15);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
 }
 
 .title {
   color: hsl(141, 100%, 42%);
-  font-weight: lighter;
-  font-size: 40px;
-  text-align: center;
+  font-weight: 300;
+  font-size: 2.5rem;
+  margin: 0 0 1.25rem;
+  letter-spacing: 0.05em;
 }
 
-.Sneakylink a {
+.subtitle {
+  color: hsl(141, 60%, 55%);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  margin: 0 0 2rem;
+  opacity: 0.7;
+}
+
+.tech-stack {
+  color: hsl(141, 100%, 55%);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  margin: 0 0 2rem;
+}
+
+.tech-stack b {
+  font-weight: inherit;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.nav-link a,
+.nav-link {
   color: hsl(141, 100%, 55%);
   text-decoration: none;
-}
-.Sneakylink a:hover {
-  text-decoration: underline;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
 
-.ME {
-  color: hsl(141, 100%, 42%);
+.nav-link a:hover,
+.nav-link:hover {
+  opacity: 0.7;
 }

@@ -7,11 +7,11 @@ export const metadata = {
 export default function Projects() {
   return (
     <>
-      <h1 className="title">There are no public projects for now :</h1>
+      <h1 className="title">Coming soon</h1>
       <nav>
         <ul>
-          <li className="Sneakylink">
-            <Link href="/"> &larr;Back to Home</Link>
+          <li className="nav-link">
+            <Link href="/">(Back to Home)</Link>
           </li>
         </ul>
       </nav>
