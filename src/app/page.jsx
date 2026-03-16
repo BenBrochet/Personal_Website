@@ -19,10 +19,7 @@ export default function Home() {
               GitHub
             </a>
           </li>
-          <li className="nav-link">
-            <Link href="/projects">Projects</Link>
-          </li>
-        </ul>
+         </ul>
       </nav>
     </div>
   );
