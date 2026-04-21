@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="card">
       <h1 className="title">Ben Brochet</h1>
-      <p className="tech-stack"> Python, JavaScript/TypeScript, Zsh, Arch/Ubuntu/MacOS, learning C/embedded</p>
+      <p className="tech-stack"><b> Python</b>, <b>JavaScript/TypeScript</b>, <b>Swift</b>, <b>Arch/Ubuntu/MacOS, </b>learning <b>C</b> </p>
 
       <nav>
         <ul className="nav-links">
