@@ -21,6 +21,7 @@ export default function Home() {
           </li>
          </ul>
       </nav>
+      <p className="updates-note">More changes coming soon...</p>
     </div>
   );
 }
