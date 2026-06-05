@@ -1,77 +1,203 @@
 :root {
-  color-scheme: light;
+  color-scheme: dark;
+  background: #000;
 }
-
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
-  background: #fff;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-  color: #000;
+  overflow: hidden;
+  background: #000;
+  font-family: Monaco, "Lucida Console", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: #fff;
 }
-
-/* Centered foreground content */
 .content {
   min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  background: #000;
 }
 
-.card {
-  text-align: center;
-  padding: 2.5rem 3rem;
-  background: #fff;
-  border: 1px solid #000;
+.menu-subtitle {
+  margin: 0 0 clamp(0.9rem, 1.8vh, 1.4rem);
+  color: #fff;
+  font-size: clamp(1.2rem, 1.9vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
-
-.title {
-  color: #000;
-  font-weight: 300;
-  font-size: 2.5rem;
-  margin: 0 0 1.25rem;
-  letter-spacing: 0.05em;
+.menu-status {
+  margin: 0 0 clamp(1rem, 2vh, 1.5rem);
+  color: #cfcfcf;
+  font-size: clamp(0.95rem, 1.35vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
 }
-
-.tech-stack {
-  color: #000;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  margin: 0 0 2rem;
-}
-
-.tech-stack b {
-  font-weight: inherit;
-}
-
-nav ul {
-  list-style: none;
+.menu-status p {
   margin: 0;
-  padding: 0;
+  white-space: nowrap;
+}
+
+.home {
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  background: #000;
+}
+.intro-video {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100dvh;
+  display: block;
+  object-fit: cover;
+  background: #000;
+}
+.home-static {
+  width: 100%;
+  min-height: 100dvh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(1rem, 1.5vw, 1.5rem) clamp(1.25rem, 2vw, 2rem) clamp(1rem, 1.5vw, 1.5rem) clamp(4rem, 6.6vw, 8rem);
+  box-sizing: border-box;
+  background-color: #000;
+  background-image: url("/live-photos/v1-ultrakill-still.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.menu-panel {
+  width: clamp(21rem, 32.5vw, 38rem);
+  max-height: calc(100dvh - 2rem);
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+.menu-title {
+  color: #fff;
+  font-size: clamp(3rem, 6.1vw, 7.4rem);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+  margin: 0 0 clamp(1.55rem, 3.1vh, 2.5rem);
+  white-space: nowrap;
+  transform: scaleX(0.78);
+  transform-origin: left center;
+}
+.menu-button {
+  position: relative;
+  width: 100%;
+  min-height: clamp(4rem, 9.2vh, 7rem);
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 2rem;
-}
-
-.nav-link a,
-.nav-link {
-  color: #000;
+  box-sizing: border-box;
+  margin-top: clamp(0.5rem, 1.15vh, 0.8rem);
+  color: #fff;
   text-decoration: none;
-  font-size: 0.95rem;
-  letter-spacing: 0.05em;
+  font-size: clamp(2rem, 3.4vw, 4.2rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  background: #000;
+  border: 3px solid #fff;
+  clip-path: none;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: background 0.15s, color 0.15s;
 }
-
-.nav-link a:hover,
-.nav-link:hover {
-  opacity: 0.7;
+.menu-button::before {
+  display: none;
 }
-
-.updates-note {
+.menu-button:hover {
+  background: #fff;
   color: #000;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  margin: 2rem 0 0;
+}
+.menu-button--active {
+  background: #fff;
+  color: #000;
+}
+.menu-button--active:hover {
+  background: #000;
+  color: #fff;
+}
+.socials {
+  margin-top: clamp(0.9rem, 1.8vh, 1.35rem);
+  color: #aaa;
+  font-size: clamp(0.9rem, 1.1vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.socials p {
+  margin: 0 0 0.4rem;
+}
+.social-links {
+  display: flex;
+  gap: 0.5rem 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.social-links span {
+  color: #fff;
+  font-size: clamp(0.68rem, 0.82vw, 0.85rem);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+@media (max-width: 760px) {
+  .home-static {
+    justify-content: center;
+    padding: 1rem;
+    background-position: 62% center;
+  }
+  .menu-panel {
+    width: min(100%, 34rem);
+  }
+  .menu-title {
+    font-size: clamp(2.25rem, 13vw, 4rem);
+  }
+  .menu-button {
+    min-height: clamp(3rem, 9vh, 4rem);
+    font-size: clamp(1.8rem, 8vw, 2.6rem);
+  }
+  .social-links {
+    gap: 0.85rem;
+  }
+}
+
+/*cmatrix */
+.matrix-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: black;
+  color: white;
+}
+
+.matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.matrix-content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.matrix-content h1 {
+  font-size: 48px;
+  font-weight: bold;
 }
