@@ -53,7 +53,7 @@ export default function Home() {
           <div className="socials">
             <p>INIT TECH STAK...OK</p>
             <div className="social-links">
-              <span>Python, Typescript/Javascript, Shell, C --interested in Rust</span>
+              <span>Python, Typescript/Javascript, Shell, C -interested in Rust</span>
             </div>
           </div>
         </nav>
