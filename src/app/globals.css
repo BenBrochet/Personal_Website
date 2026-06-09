@@ -142,10 +142,12 @@ body {
   gap: 0.5rem 0.75rem;
   flex-wrap: wrap;
   align-items: center;
+  min-width: 0;
 }
 .social-links span {
   color: #fff;
-  font-size: clamp(0.68rem, 0.82vw, 0.85rem);
+  max-width: 100%;
+  font-size: clamp(0.48rem, 0.82vw, 0.85rem);
   line-height: 1.2;
   white-space: nowrap;
 }
