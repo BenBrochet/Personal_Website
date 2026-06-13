@@ -44,8 +44,8 @@ export default function Home() {
           <a className="menu-button" href="https://github.com/BenBrochet" target="_blank" rel="noopener noreferrer">
             GITHUB
           </a>
-          <a className="menu-button" href="/projects">
-            PROJECTS
+          <a className="menu-button" href="https://gitlab.com" target="_blank" rel="noopener noreferrer">
+            GITLAB
           </a>
           <a className="menu-button" href="/cmatrix">
             CMATRIX
