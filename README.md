@@ -1,1 +1,1 @@
-Website about me. https://bbro.dev
+ https://bbro.dev
