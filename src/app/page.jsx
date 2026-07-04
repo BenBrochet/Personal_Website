@@ -20,7 +20,7 @@ export default function Home() {
         <a href="https://github.com/BenBrochet" target="_blank" rel="noopener noreferrer">
           github
         </a>
-        <a href="https://gitlab.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://gitlab.com/BenBrochet" target="_blank" rel="noopener noreferrer">
           gitlab
         </a>
         <a href="mailto:benb123435cc@gmail.com">email</a>
