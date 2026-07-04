@@ -1,63 +1,33 @@
-
-"use client";
-
-
-import { useEffect, useRef, useState } from "react";
 export default function Home() {
-  const introVideoRef = useRef(null);
-  const [showIntro, setShowIntro] = useState(true);
-  useEffect(() => {
-    if (!showIntro || !introVideoRef.current) {
-      return;
-    }
-    const fallbackTimer = window.setTimeout(() => {
-      setShowIntro(false);
-    }, 5400);
-    introVideoRef.current.play().catch(() => {
-      window.setTimeout(() => setShowIntro(false), 5000);
-    });
-    return () => {
-      window.clearTimeout(fallbackTimer);
-    };
-  }, [showIntro]);
   return (
     <main className="home">
-      {showIntro && (
-        <video
-          ref={introVideoRef}
-          className="intro-video"
-          src="/live-photos/v1-ultrakill-first-5-hq.mp4"
-          autoPlay
-          muted
-          playsInline
-          preload="auto"
-          aria-label="Ultrakill intro"
-          onEnded={() => setShowIntro(false)}
-        />
-      )}
-      <section className="home-static">
-        <nav className="menu-panel" aria-label="Main navigation">
-          <h1 className="menu-title">BEN BROCHET</h1>
-          <a className="menu-button menu-button--active" href="mailto:benb123435cc@gmail.com">
-            EMAIL
-          </a>
-          <a className="menu-button" href="https://github.com/BenBrochet" target="_blank" rel="noopener noreferrer">
-            GITHUB
-          </a>
-          <a className="menu-button" href="https://gitlab.com" target="_blank" rel="noopener noreferrer">
-            GITLAB
-          </a>
-          <a className="menu-button" href="/cmatrix">
-            CMATRIX
-          </a>
-          <div className="socials">
-            <p>INIT TECH STAK...OK</p>
-            <div className="social-links">
-              <span>Python, Typescript/Javascript, Shell, C -interested in Rust</span>
-            </div>
-          </div>
-        </nav>
-      </section>
+      {/* Granulated-edge filter applied to the text below */}
+      <svg className="grain-defs" aria-hidden="true" focusable="false">
+        <filter id="granulate">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.85"
+            numOctaves="2"
+            result="noise"
+          />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" />
+        </filter>
+      </svg>
+
+      <h1 className="name">Benjamin Brochet</h1>
+      <p className="stack">Python JavaScript TypeScript Shell C</p>
+      <nav className="links" aria-label="Links">
+        <a href="https://github.com/BenBrochet" target="_blank" rel="noopener noreferrer">
+          github
+        </a>
+        <a href="https://gitlab.com" target="_blank" rel="noopener noreferrer">
+          gitlab
+        </a>
+        <a href="mailto:benb123435cc@gmail.com">email</a>
+        <a href="https://staklabs.ai" target="_blank" rel="noopener noreferrer">
+          staklabs
+        </a>
+      </nav>
     </main>
   );
 }
