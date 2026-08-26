@@ -23,13 +23,16 @@ export default function Home() {
         <a href="https://staklabs.ai" target="_blank" rel="noopener noreferrer">
           staklabs
         </a>
-        <a href="mailto:benb123435cc@gmail.com">email</a>
-        <a href="https://gitlab.com/BenBrochet" target="_blank" rel="noopener noreferrer">
-          gitlab
-        </a>
         <a href="https://vindexdynamics.com" target="_blank" rel="noopener noreferrer">
           vindexdynamics
         </a>
+        <a href="https://gitlab.com/BenBrochet" target="_blank" rel="noopener noreferrer">
+          gitlab
+        </a>
+        <a href="https://zoltyck.com/" target="_blank" rel="noopener noreferrer">
+          Zoltyck
+        </a>
+        <a href="mailto:benb123435cc@gmail.com">email</a>
       </nav>
     </main>
   );
