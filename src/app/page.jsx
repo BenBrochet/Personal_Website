@@ -32,6 +32,9 @@ export default function Home() {
         <a href="https://zoltyck.com/" target="_blank" rel="noopener noreferrer">
           Zoltyck
         </a>
+        <a href="https://zenixai.app" target="_blank" rel="noopener noreferrer">
+          ZenixAI
+        </a>
         <a href="mailto:benb123435cc@gmail.com">email</a>
       </nav>
     </main>
